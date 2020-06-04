@@ -1,0 +1,18 @@
+module Agenda {
+    struct Event {
+        long long id;
+        string title;
+        string description;
+        long long date;
+    };
+
+    typedef sequence<Event> EventList;
+
+    interface EventService {
+        void add(in string title, in string description, in long long date);
+        void delete(in long long id);
+        void update(in long long id, in string title, in string description, in long long date);
+        EventList getAll();
+        EventList filter(in string filter);
+    };
+};
